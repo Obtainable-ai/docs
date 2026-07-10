@@ -19,13 +19,21 @@
         ]
       },
       {
+        "group": "Core Concepts",
+        "pages": [
+          "core-concepts/sources",
+          "core-concepts/thoughts",
+          "core-concepts/notes",
+          "core-concepts/topics",
+          "core-concepts/articles"
+        ]
+      },
+      {
         "group": "Using PeerNotes",
         "pages": [
           "guides/web-clipper",
-          "guides/dictate-a-note",
           "guides/writing-notes",
-          "guides/ai-assistant",
-          "guides/listen-to-workspace"
+          "guides/ai-assistant"
         ]
       },
       {
@@ -55,11 +63,16 @@
     ]
   },
   "fonts": {
-    "heading": {
-      "family": "Lora"
+    "family": "Inter"
+  },
+  "redirects": [
+    {
+      "source": "/guides/dictate-a-note",
+      "destination": "/core-concepts/thoughts"
     },
-    "body": {
-      "family": "Inter"
+    {
+      "source": "/guides/listen-to-workspace",
+      "destination": "/introduction"
     }
-  }
+  ]
 }
