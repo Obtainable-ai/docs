@@ -85,5 +85,6 @@
     "telemetry": {
       "enabled": true
     }
-  }
+  },
+  "description": "PeerNotes is a collaborative workspace for small teams where you sharpen your thinking."
 }
