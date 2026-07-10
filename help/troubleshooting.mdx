@@ -1,0 +1,140 @@
+---
+title: "Troubleshoot common PeerNotes issues"
+sidebarTitle: "Troubleshooting"
+description: "Fix common issues with PeerNotes, including browser extension installation problems, web clipper errors, login issues, and syncing problems."
+---
+
+Most issues with PeerNotes can be resolved in just a few steps. Work through the relevant section below, and if you're still stuck, the [contact page](/help/contact) has details on how to reach the team.
+
+## Extension won't install
+
+Because the PeerNotes extension is a pre-release build installed manually, a few things can go wrong during setup.
+
+<Steps>
+  <Step title="Enable Developer mode">
+    Open your browser's extension manager (usually at `chrome://extensions` or equivalent). Toggle **Developer mode** on — it's typically in the top-right corner of the page. Without this, the browser won't allow unpacked extensions to be loaded.
+  </Step>
+  <Step title="Extract the ZIP file fully">
+    Make sure you have fully extracted the downloaded ZIP archive before loading it. Trying to load the ZIP file itself, or a partially extracted folder, is a common cause of installation failure. Extract it to a permanent location you won't accidentally delete.
+  </Step>
+  <Step title="Select the correct folder">
+    When you click **Load unpacked**, select the extracted folder — the one that contains the `manifest.json` file. Don't select a parent folder or the ZIP file itself.
+  </Step>
+  <Step title="Remove and re-add the extension">
+    If the extension still won't load, remove any existing failed entry from the extension manager, then try loading the unpacked folder again from scratch.
+  </Step>
+</Steps>
+
+<Warning>
+  Don't move or delete the extracted extension folder after installation. Your browser loads the extension directly from that folder, so removing it will break the extension.
+</Warning>
+
+---
+
+## Extension icon not showing in toolbar
+
+After a successful installation, the PeerNotes icon may not appear in your browser toolbar straight away.
+
+<Steps>
+  <Step title="Open the extensions menu">
+    Click the puzzle-piece icon (🧩) in your browser toolbar to open the extensions panel.
+  </Step>
+  <Step title="Pin PeerNotes">
+    Find **PeerNotes** in the list and click the pin icon next to it. This keeps the PeerNotes icon permanently visible in your toolbar so you can access the web clipper from any page.
+  </Step>
+</Steps>
+
+---
+
+## Web clipper not working
+
+If clicking the PeerNotes extension icon does nothing, or the clipper fails to save content, try the following steps.
+
+<Steps>
+  <Step title="Reload the page">
+    Refresh the page you're trying to clip from. Extensions sometimes need a page reload to activate properly, especially after first installation.
+  </Step>
+  <Step title="Check that the extension is enabled">
+    Open your browser's extension manager and confirm that PeerNotes is toggled **on**. If it's disabled, enable it and reload the page.
+  </Step>
+  <Step title="Try re-clipping">
+    Close the clipper panel if it's open, reload the page, and try clipping again. Occasionally a transient error causes a single clip to fail.
+  </Step>
+  <Step title="Check your login status">
+    The web clipper requires an active PeerNotes session. Open [peernotes.io](https://peernotes.io) and confirm you're logged in, then return to the page and try again.
+  </Step>
+</Steps>
+
+---
+
+## Can't log in
+
+If you're unable to sign in to your PeerNotes account, work through these checks.
+
+<Steps>
+  <Step title="Check your email for an invitation">
+    PeerNotes is in early access. You need an invitation email before you can create an account. If you haven't received one yet, make sure you've signed up on the [early access waitlist](https://forms.gle/aNnZjd8pVNitfwse7).
+  </Step>
+  <Step title="Confirm you're using the right login page">
+    Always log in at [peernotes.io](https://peernotes.io). Bookmarking the correct URL avoids accidentally landing on a phishing page or an old cached version.
+  </Step>
+  <Step title="Reset your password">
+    If you've forgotten your password, use the **Forgot password** link on the login page. Check your spam or junk folder if the reset email doesn't arrive within a few minutes.
+  </Step>
+  <Step title="Check for a typo in your email address">
+    Ensure you're entering the exact email address you used when accepting your invitation.
+  </Step>
+</Steps>
+
+<Note>
+  If your account was created under a team workspace, your team admin may need to confirm your account is active and that you have the correct role assigned.
+</Note>
+
+---
+
+## Notes not syncing
+
+If changes you make in PeerNotes aren't appearing on other devices or for your collaborators, try these steps.
+
+<Steps>
+  <Step title="Refresh the page">
+    A manual page refresh forces the app to pull the latest data from the server. This resolves most one-off sync hiccups.
+  </Step>
+  <Step title="Check your internet connection">
+    PeerNotes requires an active internet connection to sync in real time. Confirm your device is online and that no firewall or VPN is blocking access to peernotes.io.
+  </Step>
+  <Step title="Log out and log back in">
+    Sign out from [peernotes.io](https://peernotes.io), then sign back in. This refreshes your session and clears any stale authentication state that could be preventing sync.
+  </Step>
+  <Step title="Try a different browser or device">
+    If the issue is limited to one browser, try opening PeerNotes in a different browser or on another device to isolate whether it's a local problem.
+  </Step>
+</Steps>
+
+---
+
+## Extension needs updating
+
+The PeerNotes browser extension doesn't update automatically because it's installed as an unpacked extension. When a new version is released, follow these steps to update.
+
+<Steps>
+  <Step title="Download the latest ZIP">
+    Download the newest version of the extension ZIP from the link provided in your invitation email or from the [Discord community](https://discord.gg/muDmrV2jq7).
+  </Step>
+  <Step title="Extract the new ZIP">
+    Extract the contents to a folder on your computer. You can overwrite your existing extracted folder, or extract to a new location.
+  </Step>
+  <Step title="Reload the extension in your browser">
+    Open your browser's extension manager, find PeerNotes, and click the reload icon (↺) if you replaced the files in the same folder. If you extracted to a new location, click **Load unpacked** and select the new folder — then remove the old entry.
+  </Step>
+</Steps>
+
+<Tip>
+  Keep your extension ZIP in a dedicated folder so you always know where to find it when an update is available.
+</Tip>
+
+---
+
+<Note>
+  Can't find the answer you need here? Visit the [contact page](/help/contact) to reach the PeerNotes team via Discord or email support.
+</Note>

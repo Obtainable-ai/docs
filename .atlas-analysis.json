@@ -1,13 +1,11 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "name": "PeerNotes Help Center",
+  "projectType": "saas",
+  "projectName": "PeerNotes",
+  "projectDescription": "PeerNotes is a shared idea and thinking workspace for teams — capture notes with a web clipper or dictation, develop them together with real-time collaboration and AI, and share finished thinking clearly.",
   "theme": "almond",
-  "favicon": "https://media.brand.dev/873dd557-f370-49a3-9ac7-00af05999047.png",
-  "colors": {
-    "primary": "#41a7bf",
-    "light": "#4b4e4e",
-    "dark": "#c6c9ca"
-  },
+  "primaryColor": "#41a7bf",
+  "lightColor": "#4b4e4e",
+  "darkColor": "#c6c9ca",
   "navigation": {
     "groups": [
       {
@@ -53,5 +51,15 @@
         ]
       }
     ]
-  }
+  },
+  "keyFeatures": [
+    "Web clipper — save any article, page, or quote into your workspace",
+    "Dictate a note — speak your thinking out loud and PeerNotes captures it",
+    "Real-time collaboration — teammates develop ideas right alongside you",
+    "Shared workspace — one organized home for your team's notes and thinking",
+    "AI assistant — questions and sharpens ideas instead of writing them for you",
+    "Listen to your workspace — catch up on notes by ear",
+    "Chrome extension (pre-release) — install manually until Chrome Web Store listing goes live"
+  ],
+  "publicApiSurface": []
 }
