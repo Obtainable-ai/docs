@@ -2,11 +2,11 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "PeerNotes Help Center",
   "theme": "almond",
-  "favicon": "https://media.brand.dev/873dd557-f370-49a3-9ac7-00af05999047.png",
+  "favicon": "https://get.peernotes.io/favicon.ico",
   "colors": {
-    "primary": "#41a7bf",
-    "light": "#4b4e4e",
-    "dark": "#c6c9ca"
+    "primary": "#4F6D55",
+    "light": "#6F8B74",
+    "dark": "#3A4F3F"
   },
   "navigation": {
     "groups": [
@@ -53,5 +53,13 @@
         ]
       }
     ]
+  },
+  "fonts": {
+    "heading": {
+      "family": "Lora"
+    },
+    "body": {
+      "family": "Inter"
+    }
   }
 }
