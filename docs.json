@@ -74,5 +74,16 @@
       "source": "/guides/listen-to-workspace",
       "destination": "/introduction"
     }
-  ]
+  ],
+  "navbar": {
+    "links": []
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-0XDDQ1RVS4"
+    },
+    "telemetry": {
+      "enabled": true
+    }
+  }
 }
