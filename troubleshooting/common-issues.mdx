@@ -1,130 +1,153 @@
 ---
-title: "Troubleshooting guide for common PeerNotes problems"
-sidebarTitle: "Common Issues"
-description: "Fix common issues with PeerNotes, including browser clipper problems, web clipper errors, login issues, and syncing problems."
+title: "PeerNotes FAQ and troubleshooting"
+sidebarTitle: "FAQ & Troubleshooting"
+icon: "circle-question"
+description: "Answers to common PeerNotes questions and fixes for common problems — access and sign-in, the browser clipper, syncing, and leaving or deleting a workspace."
 ---
 
-Most issues with PeerNotes can be resolved in just a few steps. Work through the relevant section below, and if you're still stuck, the [contact page](/troubleshooting/contact) has details on how to reach the team.
+Most questions and issues are covered below. If you're still stuck, or you've found a bug or want to request a feature, head to [feedback.peernotes.io](https://feedback.peernotes.io/) — that's where bugs, feature requests, the roadmap, and new-release notes all live.
 
-## Clipper won't install
+## Frequently asked questions
 
-The PeerNotes clipper installs from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) in one click. If it won't add:
+<AccordionGroup>
+  <Accordion title="How do I get access to PeerNotes?">
+    PeerNotes is in research preview, open to teams. Go to [peernotes.io](https://peernotes.io) and sign in with your **Google account** to create your workspace. It's free while in preview — no card required. See [get.peernotes.io/download](https://get.peernotes.io/download) for every way to reach your workspace.
+  </Accordion>
+
+  <Accordion title="How do I sign in?">
+    PeerNotes supports **Google sign-in only** — there's no email-and-password login. On the sign-in screen, select **Continue with Google**. To use a different Google account, choose **Use another account**. Make sure you sign in with the same Google address your workspace admin added to the team.
+  </Accordion>
+
+  <Accordion title="Is PeerNotes free?">
+    While PeerNotes is in research preview, it's free — no card required. Pricing for general availability hasn't been announced; preview users will be notified of changes well in advance.
+  </Accordion>
+
+  <Accordion title="What browsers does the clipper support?">
+    The PeerNotes clipper works in all Chromium-based browsers — **Google Chrome, Microsoft Edge, Brave, Arc, and Opera**. Firefox and Safari support is on the way. Until then, use a Chromium-based browser or clip from the mobile apps.
+  </Accordion>
+
+  <Accordion title="Do I need the browser extension?">
+    No. The full workspace — thoughts, notes, sources, topics, and the [Peer Agent](/core-concepts/peer-agent) — runs in any browser at [peernotes.io](https://peernotes.io). The extension adds the [web clipper](/features/web-clipper) for saving pages as you read; skip it if you don't need clipping.
+  </Accordion>
+
+  <Accordion title="How does the Peer Agent work?">
+    Open **Chat** in the sidebar and ask it anything — it answers with your workspace as context (your thoughts, notes, sources, and topics). You can also tag it in a comment on any thought, note, or source. It's built to sharpen your thinking, not write for you. See [Chat](/features/chat) and [Peer Agent](/core-concepts/peer-agent).
+  </Accordion>
+
+  <Accordion title="Can I share notes with people outside my team?">
+    Not currently — PeerNotes is designed as a shared workspace where every member has an account. If external sharing matters to you, add it at [feedback.peernotes.io](https://feedback.peernotes.io/).
+  </Accordion>
+
+  <Accordion title="How do I report a bug, request a feature, or see what's coming?">
+    All of it lives at [feedback.peernotes.io](https://feedback.peernotes.io/) — file bugs, post feature requests, follow the roadmap, and read new-release notes. For account-specific or private matters, use email support from your account settings at [peernotes.io](https://peernotes.io).
+  </Accordion>
+</AccordionGroup>
+
+## Leaving or deleting a workspace
+
+Both actions live in **Workspace settings → Danger zone**, opened from the workspace switcher. See [Workspace settings](/features/workspace-settings#danger-zone) for the full detail.
+
+### Leave a workspace
+
+Any member — admin or not — can leave a workspace.
+
+<Steps>
+  <Step title="Open Workspace settings → Danger zone">
+    Select **Leave workspace**. There's no type-to-confirm step.
+  </Step>
+  <Step title="You lose access">
+    Your membership becomes inactive and the workspace drops out of your switcher. An admin can re-invite you later.
+  </Step>
+</Steps>
+
+<Note>
+  If you're the workspace's only admin, promote another member to admin first — otherwise no one is left who can manage it.
+</Note>
+
+### Delete a workspace
+
+Deleting is **admin-only** and permanent.
+
+<Warning>
+  Deleting removes the workspace and **all of its notes, thoughts, topics, and member associations**. This cannot be undone.
+</Warning>
+
+In **Danger zone**, type the workspace name to confirm, then select **Delete workspace** (the button stays disabled until the name matches exactly).
+
+## Troubleshooting
+
+### Can't sign in
+
+<Steps>
+  <Step title="Use Continue with Google">
+    PeerNotes only supports Google sign-in. If you don't see a Google button, you're on the wrong page — always sign in from [peernotes.io](https://peernotes.io).
+  </Step>
+  <Step title="Pick the right Google account">
+    Choose **Use another account** and select the Google address your admin added to the workspace. Signing in with a personal address that isn't on the team will succeed but land you with no workspace.
+  </Step>
+  <Step title="Ask your admin to check your membership">
+    If you were added but still can't get in, have a workspace admin confirm your Google address is on the members list in [Workspace settings → People](/features/workspace-settings#people).
+  </Step>
+  <Step title="Avoid in-app browsers">
+    Google sign-in is blocked inside apps like Slack, LinkedIn, or Instagram. Open the link in Chrome, Edge, Brave, Arc, or Opera instead.
+  </Step>
+</Steps>
+
+### Clipper won't install
 
 <Steps>
   <Step title="Use a Chromium-based browser">
-    The clipper works in Chrome, Edge, Brave, Arc, and Opera. Firefox and Safari aren't supported yet — until then, use a Chromium-based browser or clip from the mobile apps.
+    The clipper installs from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) and runs in Chrome, Edge, Brave, Arc, and Opera. Firefox and Safari aren't supported yet.
   </Step>
-  <Step title="Allow extensions from the Chrome Web Store">
-    On a managed or work device, your organisation may block Web Store installs. Check with your IT admin, or install on a personal profile.
+  <Step title="Check for a managed-device block">
+    On a work or school profile, your organisation may block Web Store installs. Ask your IT admin, or install on a personal profile.
   </Step>
-  <Step title="Reload after installing">
-    Refresh any tabs that were already open before you added the clipper so it can activate on them.
+  <Step title="Reload open tabs">
+    Refresh any pages that were open before you added the clipper so it can activate on them.
   </Step>
 </Steps>
 
-<Note>
-  Still running an early manual build? Remove it from your browser's extensions page and reinstall from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) to get automatic updates.
-</Note>
+### Clipper icon missing from the toolbar
 
----
+Click the puzzle-piece icon in your browser toolbar, find **PeerNotes**, and pin it so it stays visible.
 
-## Extension icon not showing in toolbar
-
-After a successful installation, the PeerNotes icon may not appear in your browser toolbar straight away.
+### Web clipper isn't saving
 
 <Steps>
-  <Step title="Open the extensions menu">
-    Click the puzzle-piece icon (🧩) in your browser toolbar to open the extensions panel.
+  <Step title="Reload the page and try again">
+    Extensions sometimes need a page reload to activate — especially right after installing.
   </Step>
-  <Step title="Pin PeerNotes">
-    Find **PeerNotes** in the list and click the pin icon next to it. This keeps the PeerNotes icon permanently visible in your toolbar so you can access the web clipper from any page.
+  <Step title="Confirm the extension is enabled">
+    Open your browser's extensions page and check PeerNotes is toggled **on**.
   </Step>
-</Steps>
-
----
-
-## Web clipper not working
-
-If clicking the PeerNotes extension icon does nothing, or the clipper fails to save content, try the following steps.
-
-<Steps>
-  <Step title="Reload the page">
-    Refresh the page you're trying to clip from. Extensions sometimes need a page reload to activate properly, especially after first installation.
-  </Step>
-  <Step title="Check that the extension is enabled">
-    Open your browser's extension manager and confirm that PeerNotes is toggled **on**. If it's disabled, enable it and reload the page.
-  </Step>
-  <Step title="Try re-clipping">
-    Close the clipper panel if it's open, reload the page, and try clipping again. Occasionally a transient error causes a single clip to fail.
-  </Step>
-  <Step title="Check your login status">
-    The web clipper requires an active PeerNotes session. Open [peernotes.io](https://peernotes.io) and confirm you're logged in, then return to the page and try again.
+  <Step title="Check you're signed in">
+    The clipper needs an active session. Open [peernotes.io](https://peernotes.io), confirm you're signed in with Google, then return to the page and clip again.
   </Step>
 </Steps>
 
----
-
-## Can't log in
-
-If you're unable to sign in to your PeerNotes account, work through these checks.
-
-<Steps>
-  <Step title="Create your account at peernotes.io">
-    PeerNotes is in research preview, open to teams. If you don't have an account yet, go to [peernotes.io](https://peernotes.io) and choose **Get started**.
-  </Step>
-  <Step title="Confirm you're using the right login page">
-    Always log in at [peernotes.io](https://peernotes.io). Bookmarking the correct URL avoids accidentally landing on a phishing page or an old cached version.
-  </Step>
-  <Step title="Reset your password">
-    If you've forgotten your password, use the **Forgot password** link on the login page. Check your spam or junk folder if the reset email doesn't arrive within a few minutes.
-  </Step>
-  <Step title="Check for a typo in your email address">
-    Ensure you're entering the exact email address you signed up with.
-  </Step>
-</Steps>
-
-<Note>
-  If your account was created under a team workspace, your team admin may need to confirm your account is active and that you have the correct role assigned.
-</Note>
-
----
-
-## Notes not syncing
-
-If changes you make in PeerNotes aren't appearing on other devices or for your collaborators, try these steps.
+### Notes aren't syncing or aren't showing for teammates
 
 <Steps>
   <Step title="Refresh the page">
-    A manual page refresh forces the app to pull the latest data from the server. This resolves most one-off sync hiccups.
+    A manual refresh pulls the latest data and clears most one-off sync hiccups.
   </Step>
-  <Step title="Check your internet connection">
-    PeerNotes requires an active internet connection to sync in real time. Confirm your device is online and that no firewall or VPN is blocking access to peernotes.io.
+  <Step title="Check the item is shared">
+    Teammates only see thoughts, notes, and sources you've turned **Share with workspace** on for. See [Sharing & privacy](/features/sharing).
   </Step>
-  <Step title="Log out and log back in">
-    Sign out from [peernotes.io](https://peernotes.io), then sign back in. This refreshes your session and clears any stale authentication state that could be preventing sync.
+  <Step title="Check your connection">
+    PeerNotes syncs in real time and needs an active connection — confirm no VPN or firewall is blocking `peernotes.io`.
   </Step>
-  <Step title="Try a different browser or device">
-    If the issue is limited to one browser, try opening PeerNotes in a different browser or on another device to isolate whether it's a local problem.
-  </Step>
-</Steps>
-
----
-
-## Clipper is out of date
-
-The Chrome Web Store version of the clipper updates itself in the background — you don't need to do anything.
-
-<Steps>
-  <Step title="Force an update check">
-    Open your browser's extensions page, enable **Developer mode**, and click **Update**. Chromium browsers otherwise refresh extensions every few hours.
-  </Step>
-  <Step title="Switch off any early manual build">
-    If you loaded an unpacked pre-release build in the past, remove it from the extensions page and install the clipper from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) so updates arrive automatically from now on.
+  <Step title="Sign out and back in">
+    This refreshes a stale session that can quietly block sync.
   </Step>
 </Steps>
+
+### Clipper is out of date
+
+The Chrome Web Store version updates itself in the background. To force it: open your browser's extensions page, enable **Developer mode**, and click **Update**. If you're still on an old manually-loaded build, remove it and reinstall from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi).
 
 ---
 
 <Note>
-  Can't find the answer you need here? Visit the [contact page](/troubleshooting/contact) to reach the PeerNotes team via Discord or email support.
+  Didn't find it here? File it at [feedback.peernotes.io](https://feedback.peernotes.io/), or see the [contact page](/troubleshooting/contact) for other ways to reach the team.
 </Note>

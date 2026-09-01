@@ -57,7 +57,6 @@
         "group": "Troubleshooting",
         "pages": [
           "troubleshooting/common-issues",
-          "troubleshooting/faq",
           "troubleshooting/contact"
         ]
       }
@@ -133,7 +132,11 @@
     },
     {
       "source": "/help/faq",
-      "destination": "/troubleshooting/faq"
+      "destination": "/troubleshooting/common-issues"
+    },
+    {
+      "source": "/troubleshooting/faq",
+      "destination": "/troubleshooting/common-issues"
     },
     {
       "source": "/help/contact",
