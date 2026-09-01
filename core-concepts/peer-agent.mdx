@@ -1,0 +1,68 @@
+---
+title: "The Peer Agent: an AI teammate inside your PeerNotes workspace"
+sidebarTitle: "Peer Agent"
+description: "The Peer Agent is an AI participant grounded in your workspace. Chat with it, or tag it in a comment on a thought, note, or source to pull it into the thread."
+icon: "robot"
+---
+
+The **Peer Agent** is an AI participant that lives inside your [workspace](/core-concepts/workspace). It works from what the team has actually written — your [notes](/core-concepts/notes), [sources](/core-concepts/sources), and [topics](/core-concepts/topics) — not from the open web. Like the rest of PeerNotes, it's built to sharpen your thinking rather than replace it: it asks the questions a careful reader would, and resurfaces related thinking you've already captured.
+
+It shows up as a member of the workspace — you'll see it in the roster and the mention menu as **PeerNotes Agent**.
+
+There are two ways to work with it.
+
+## Chat with it
+
+Open **Chat** in the sidebar and ask it anything, with the current workspace as context.
+
+<Steps>
+  <Step title="Open Chat">
+    Previous conversations are listed alongside, so you can continue a thread or start a new one.
+  </Step>
+  <Step title="Ask your question">
+    Type into **Ask your assistant…** — about your own thinking ("What have I captured about onboarding lately?"), a source you added, or a draft you're developing.
+  </Step>
+  <Step title="Keep the thread">
+    Conversations are saved per workspace. Switch workspaces and chat follows, with that workspace's content as context.
+  </Step>
+</Steps>
+
+For the full chat workflow, see [Chatting with the Peer Agent](/guides/ai-assistant).
+
+## Tag it in a comment
+
+You don't have to leave what you're reading to ask the Peer Agent something. In a comment on a **thought**, **note**, or **source**, type `@` and pick **PeerNotes Agent** — the same way you'd mention a teammate. The agent reads the item and the surrounding thread, then replies in place.
+
+This is the fastest way to ask a question *about a specific passage*:
+
+- `@PeerNotes Agent — is this claim backed by anything in our sources?`
+- `@PeerNotes Agent — what did we conclude about this last quarter?`
+- `@PeerNotes Agent — summarize the open questions in this note.`
+
+<Tip>
+  Tagging keeps the question and the answer attached to the exact spot they're about, so the next person reading the note sees the context too.
+</Tip>
+
+## What it can contribute
+
+Beyond answering, the Peer Agent can add to the workspace on behalf of members — capturing a thought, drafting a note, or saving a source. **Which of these it's allowed to do is set per workspace** by an admin, in [Workspace settings → Agents](/configuration/workspace-settings#agents), where the agent can also be turned off entirely for that workspace.
+
+## Your control
+
+Each member decides what the Peer Agent may do with *their* content, in [Preferences → AI](/configuration/user-preferences#ai):
+
+- **Comment** — whether the agent may comment on your own thoughts, notes, or sources.
+- **Tag** — whether the agent may mention you in other people's thoughts, notes, or sources.
+
+Both are on by default, and can be set separately for thoughts, notes, and sources.
+
+## Behind the scenes
+
+The Peer Agent also works continuously without being asked:
+
+- **Organizing** — clustering new thoughts into [topics](/core-concepts/topics) as they're captured
+- **Connecting** — linking related thinking across the workspace so themes surface on their own
+
+<Info>
+  The Peer Agent works within one workspace at a time. It only ever sees the workspace you're currently in.
+</Info>

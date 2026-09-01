@@ -4,27 +4,33 @@ sidebarTitle: "Shared Workspace"
 description: "A PeerNotes workspace is where a team thinks together — private notebooks for each member, shared notes for the group, organized by topics."
 ---
 
-A **workspace** is where a group thinks together in PeerNotes — a seminar, a research group, a knowledge team, a book club. Each member captures privately inside it; what the group shares is the developed thinking. One home, two layers: yours, and the team's.
+A [**workspace**](/core-concepts/workspace) is where a group thinks together in PeerNotes — a seminar, a research group, a knowledge team, a book club. Each member captures privately inside it; what the group shares is the developed thinking. One home, two layers: yours, and the team's. This guide is about working in one as a team; for the settings that shape it, see [Workspace settings](/configuration/workspace-settings).
 
-## What's yours, what's shared
+## Private by default, shared when you choose
+
+Every [thought](/core-concepts/thoughts), [note](/core-concepts/notes), and [source](/core-concepts/sources) you create is **private to you** until you share it. Sharing is a per-item toggle — **Share with workspace** — and it works the same way for all three:
 
 <CardGroup cols={2}>
-  <Card title="Private to each member" icon="lock">
-    Your [thoughts](/core-concepts/thoughts) and [sources](/core-concepts/sources) — the raw, unfiltered capture layer. No teammate ever sees these unless you develop them into something shared.
+  <Card title="Private" icon="lock">
+    Only you can see it. New thoughts, notes, and sources start here.
   </Card>
 
   <Card title="Shared with the workspace" icon="users">
-    [Notes](/core-concepts/notes) you've opened to teammates or published for everyone — organized by the [topics](/core-concepts/topics) the workspace thinks about.
+    Every member can read it in the **Shared** view of that feed and comment on it. Toggle it back off any time to make it private again.
   </Card>
 </CardGroup>
 
-This split is what makes PeerNotes work: capture stays honest because it's private, and the shared layer stays high-signal because everything in it was deliberately shared.
+Set a different starting point per type in [Preferences → Sharing](/configuration/user-preferences#sharing) — for example, share every new note automatically but keep thoughts private. Whatever the default, you can still change any individual item afterwards.
+
+[Notes](/core-concepts/notes) go one step further: add [collaborators](/collaboration/real-time-editing) to invite specific people to edit a note with you.
+
+This split is what makes PeerNotes work: capture stays honest because it starts private, and the shared layer stays high-signal because everything in it was deliberately shared.
 
 ## Members and administrators
 
 Workspaces have two roles:
 
-- **Members** capture their own thoughts, collaborate on notes they're invited to, and read everything published to the workspace.
+- **Members** capture their own thoughts, collaborate on notes they're invited to, and read everything shared with the workspace.
 - **Administrators** manage the workspace itself — its settings, members, and topics.
 
 <Steps>
@@ -32,7 +38,7 @@ Workspaces have two roles:
     Give it a name, and optionally seed it with the topics you know you'll be thinking about.
   </Step>
   <Step title="Invite members by email">
-    Add teammates from workspace settings — you can invite members and add topics anytime.
+    Add teammates from [Workspace settings → People](/configuration/workspace-settings#people) — you can invite members and add topics anytime.
   </Step>
   <Step title="Add administrators (optional)">
     Share the admin role with co-organizers who should manage members and settings alongside you.
@@ -41,15 +47,15 @@ Workspaces have two roles:
 
 ## Navigate the workspace
 
-- **Sidebar feeds** — Thoughts, Notes, and Sources each have their own feed, so you always know which layer you're looking at.
+- **Sidebar feeds** — Thoughts, Notes, and Sources each have their own feed, so you always know which layer you're looking at. Each feed has a **Shared** view showing what the team has shared.
 - **Search** — press **⌘K** (Mac) or **Ctrl K** (Windows) to search across your workspace from anywhere.
 - **Topics** — browse the Topics page to see the workspace's themes and dive into everything on a subject.
-- **Chat** — ask the [AI assistant](/guides/ai-assistant) about anything in the workspace.
+- **Chat** — ask the [Peer Agent](/core-concepts/peer-agent) about anything in the workspace, or tag it in a comment on any thought, note, or source.
 
 ## Multiple workspaces
 
 You can belong to several workspaces — say, one for your team and one for a reading group — and switch between them from the workspace switcher. Each workspace is fully separate: its own members, topics, content, and chat.
 
 <Tip>
-  **Treat published notes as the workspace's record.** When thinking matures — a decision, a finding, a synthesis worth keeping — publish it. Over time the Notes feed becomes the knowledge base a new member can read to understand how the group thinks.
+  **Treat shared notes as the workspace's record.** When thinking matures — a decision, a finding, a synthesis worth keeping — share it. Over time the Shared view of the Notes feed becomes the knowledge base a new member can read to understand how the group thinks.
 </Tip>

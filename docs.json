@@ -21,10 +21,12 @@
       {
         "group": "Core Concepts",
         "pages": [
+          "core-concepts/workspace",
           "core-concepts/sources",
           "core-concepts/thoughts",
           "core-concepts/notes",
-          "core-concepts/topics"
+          "core-concepts/topics",
+          "core-concepts/peer-agent"
         ]
       },
       {
@@ -32,6 +34,7 @@
         "pages": [
           "guides/web-clipper",
           "guides/writing-notes",
+          "guides/voice-and-ai",
           "guides/ai-assistant"
         ]
       },
@@ -41,6 +44,13 @@
           "collaboration/shared-workspace",
           "collaboration/real-time-editing",
           "collaboration/sharing-notes"
+        ]
+      },
+      {
+        "group": "Configuration",
+        "pages": [
+          "configuration/workspace-settings",
+          "configuration/user-preferences"
         ]
       },
       {
@@ -75,11 +85,11 @@
     },
     {
       "source": "/guides/dictate-a-note",
-      "destination": "/core-concepts/thoughts"
+      "destination": "/guides/voice-and-ai"
     },
     {
       "source": "/guides/listen-to-workspace",
-      "destination": "/introduction"
+      "destination": "/guides/voice-and-ai"
     }
   ],
   "navbar": {

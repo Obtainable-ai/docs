@@ -1,0 +1,96 @@
+---
+title: "Workspace settings: configure your PeerNotes workspace"
+sidebarTitle: "Workspace Settings"
+description: "Configure a PeerNotes workspace — its name and description, topics, members and roles, Peer Agent permissions, and leaving or deleting the workspace."
+icon: "gear"
+---
+
+Workspace settings control everything about a [workspace](/core-concepts/workspace) itself. Open them from the workspace switcher — choose **Workspace settings**.
+
+<Info>
+  Only **admins** can change these settings. Members can open the panel but see it read-only: *"View only — you don't have permission to edit this workspace."* Leaving a workspace ([below](#leave-a-workspace)) is available to everyone.
+</Info>
+
+Changes save when you select **Save changes**; the footer confirms with *"All changes saved."*
+
+## Details
+
+The workspace's identity.
+
+| Field | Notes |
+| --- | --- |
+| **Workspace name** | Up to 25 characters. Shown in the switcher and across the app. |
+| **Description** | Optional, up to 300 characters. Also used as context when PeerNotes suggests topics. |
+
+## Topics
+
+Manage the [topics](/core-concepts/topics) the workspace organizes its thinking around.
+
+- **Add a topic** — give it a name and an optional description.
+- **Suggest topics** — let PeerNotes propose topics from the workspace name and description. Review them before keeping.
+- **Remove a topic** — from its chip.
+
+A workspace can hold up to 100 topics.
+
+## People
+
+Manage who's in the workspace and what they can do.
+
+<Steps>
+  <Step title="Invite by email">
+    Enter an email address, choose **Member** or **Admin**, and select **Invite**. Invited people appear as **pending** until they accept.
+  </Step>
+  <Step title="Change a role">
+    Use the role toggle on any member row to switch between **Member** and **Admin**.
+  </Step>
+  <Step title="Remove someone">
+    Use the remove control on their row. You can't remove yourself, and the Peer Agent's system account can't be edited or removed.
+  </Step>
+</Steps>
+
+See [Workspaces](/core-concepts/workspace#members-and-admins) for what each role can do.
+
+## Agents
+
+Configure the [Peer Agent](/core-concepts/peer-agent) for this workspace.
+
+| Setting | What it does |
+| --- | --- |
+| **Enable Peer Agent** | Allow an AI peer to contribute to this workspace on behalf of members. Turn it off to remove the Peer Agent from this workspace entirely. |
+| **Create permissions** | Choose which content types the Peer Agent may create in this workspace — **Thoughts**, **Notes**, **Sources**, independently. |
+
+The Peer Agent is enabled with all create permissions on by default. These are workspace-wide; each member additionally controls what the agent may do with *their own* content in [Preferences → AI](/configuration/user-preferences#ai).
+
+## Danger zone
+
+The **Danger zone** tab holds two separate actions: leaving the workspace yourself, and deleting it for everyone.
+
+### Leave a workspace
+
+Any member — admin or not — can leave a workspace they belong to.
+
+<Steps>
+  <Step title="Open Danger zone and select Leave workspace">
+    There's no type-to-confirm step — one click leaves.
+  </Step>
+  <Step title="You lose access">
+    Your membership becomes inactive and the workspace drops out of your switcher: *"You will lose access to this workspace."*
+  </Step>
+  <Step title="Rejoining">
+    An admin can re-invite you later.
+  </Step>
+</Steps>
+
+<Note>
+  If you're the only admin, promote another member to admin before you leave so the workspace still has someone who can manage it.
+</Note>
+
+### Delete a workspace
+
+Deleting is **admin-only** and applies to the whole team.
+
+<Warning>
+  **Deleting a workspace is permanent.** It removes the workspace and all of its notes, thoughts, topics, and member associations. This cannot be undone.
+</Warning>
+
+To delete, open **Danger zone**, type the workspace name to confirm in the field, and select **Delete workspace**. The button stays disabled until the name matches exactly.

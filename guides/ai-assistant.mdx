@@ -6,6 +6,8 @@ description: "Chat with the PeerNotes AI assistant about anything in your worksp
 
 The PeerNotes AI assistant is a thinking partner built into your workspace. Open a chat, ask it anything, and it responds with your workspace as context — your thoughts, notes, topics, and sources. It's designed around a simple belief: the best way to help you think is to ask better questions, not to hand you someone else's words.
 
+Chat is one way to work with the [Peer Agent](/core-concepts/peer-agent) — the same AI participant you can also [tag in a comment](/core-concepts/peer-agent#tag-it-in-a-comment) on a thought, note, or source.
+
 ## Start a conversation
 
 <Steps>
@@ -26,7 +28,7 @@ Most AI writing tools offer to write things for you. The PeerNotes assistant tak
 
 <CardGroup cols={2}>
   <Card title="Critical questions" icon="circle-question">
-    Ask the assistant to read a draft note and it surfaces the questions a careful reader would ask — the ones you need to answer before publishing.
+    Ask the assistant to read a draft note and it surfaces the questions a careful reader would ask — the ones you need to answer before you share it.
   </Card>
 
   <Card title="Assumption spotting" icon="magnifying-glass">
@@ -46,9 +48,13 @@ Most AI writing tools offer to write things for you. The PeerNotes assistant tak
   The assistant is most useful on notes where you have a real point to make but aren't sure it holds up yet. Bring it a draft you'd want a thoughtful colleague to read before you share it with the team.
 </Tip>
 
+## Ask in context instead
+
+When your question is about a specific passage, you don't need to open chat at all. Add a comment on the thought, note, or source, type `@`, and pick **PeerNotes Agent** — it reads the item and replies in the thread, keeping the question and answer attached to the spot they're about. See [Tag it in a comment](/core-concepts/peer-agent#tag-it-in-a-comment).
+
 ## The agent behind the scenes
 
-Chat is the conversation you start; the PeerNotes agent also works continuously in the background:
+Chat is the conversation you start; the [Peer Agent](/core-concepts/peer-agent) also works continuously in the background:
 
 - **Organizing** — clustering your new thoughts into [topics](/core-concepts/topics) as you capture them
 - **Connecting** — linking related thinking across your workspace so themes surface on their own
@@ -56,5 +62,5 @@ Chat is the conversation you start; the PeerNotes agent also works continuously 
 The result is a workspace that gets more organized the more you use it — without you doing the organizing.
 
 <Info>
-  The assistant works within one workspace at a time. Switch workspaces and your chat follows, with that workspace's content as context.
+  The assistant works within one workspace at a time. Switch workspaces and your chat follows, with that workspace's content as context. What the Peer Agent may do with your content is set in [Preferences → AI](/configuration/user-preferences#ai).
 </Info>
