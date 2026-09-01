@@ -45,6 +45,7 @@
           "features/listen",
           "features/ai-editor",
           "features/chat",
+          "features/mcp",
           "features/search",
           "features/comments",
           "features/sharing",

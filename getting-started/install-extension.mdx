@@ -1,8 +1,8 @@
 ---
-title: "Install PeerNotes: browser clipper, mobile apps, and AI assistant"
+title: "Install PeerNotes: browser clipper, mobile apps, and AI agent connector"
 sidebarTitle: "Install PeerNotes"
 icon: "download"
-description: "PeerNotes runs in any browser with nothing to install. Add the Chrome clipper, request the iPhone or Android beta, or connect PeerNotes to your AI assistant."
+description: "PeerNotes runs in any browser with nothing to install. Add the Chrome clipper, request the iPhone or Android beta, or connect PeerNotes to your AI agent."
 ---
 
 The PeerNotes workspace runs in any browser — there's **nothing to install** to get started. Everything below is an optional add-on that brings capture closer to wherever your thinking happens.
@@ -43,32 +43,8 @@ The PeerNotes iPhone and Android apps are in **private beta**. Tell the team a l
 
 You can also share a link or screenshot into PeerNotes from any app's share sheet, or dictate a thought on your way out of a meeting — it lands in the same workspace your teammates pick up from the browser.
 
-## In your AI assistant
+## In your AI agent
 
-Connect PeerNotes to an assistant that supports remote [MCP](https://modelcontextprotocol.io) — Claude, and a growing list of others — and it answers from your workspace's notes, sources, and topics instead of the open web.
+Connect PeerNotes to the AI agent you already use — **Claude, Claude Cowork, Claude Code, OpenAI Codex, GitHub Copilot, Cursor**, or anything else that supports remote MCP — and it answers from your workspace's notes, sources, and topics instead of the open web.
 
-<Steps>
-  <Step title="Copy your workspace address">
-    `https://api.peernotes.io/mcp`
-  </Step>
-  <Step title="Add it as a connector">
-    Paste the address where your assistant asks for a remote MCP server or connector.
-  </Step>
-  <Step title="Sign in with PeerNotes">
-    Authenticate with your PeerNotes account — no API keys to manage. Your assistant only ever sees the workspaces your account can already open.
-  </Step>
-</Steps>
-
-For Claude Desktop or Claude Code, add the server to your config file instead:
-
-```json
-{
-  "mcpServers": {
-    "peernotes": {
-      "url": "https://api.peernotes.io/mcp"
-    }
-  }
-}
-```
-
-In Claude Desktop, that's **Settings › Developer › Edit config**, then restart Claude. Full instructions live at [get.peernotes.io/download](https://get.peernotes.io/download).
+Add `https://api.peernotes.io/mcp` as a remote MCP connector and sign in with your PeerNotes account. See [Use PeerNotes with your AI agent](/features/mcp) for step-by-step and config-file setup.

@@ -1,0 +1,59 @@
+---
+title: "Use PeerNotes with your AI agent"
+sidebarTitle: "Connect Your Agent"
+icon: "plug"
+description: "Connect PeerNotes to the AI agent you already use — Claude, Claude Cowork, Claude Code, Codex, Copilot — so it answers from your workspace instead of the open web."
+---
+
+PeerNotes exposes your [workspace](/core-concepts/workspace) as a remote [MCP](https://modelcontextprotocol.io) server. Point the AI agent you already use at it and, instead of guessing from the open web, it answers from what you and your teammates actually wrote — your notes, sources, and topics.
+
+> *"What did the team learn about screening signal this quarter?"*
+> — *Read 9 notes and 4 sources from your workspace. The recurring theme is a synthesis gap, not a capture problem…*
+
+## Connect it
+
+<Steps>
+  <Step title="Copy your workspace address">
+    `https://api.peernotes.io/mcp`
+  </Step>
+  <Step title="Add it as a connector">
+    Paste the address wherever your agent asks for a **remote / HTTP MCP server** or **connector**.
+  </Step>
+  <Step title="Sign in with PeerNotes">
+    Authenticate with your PeerNotes account when prompted — no API keys, no files to edit.
+  </Step>
+</Steps>
+
+### Or edit a config file
+
+For clients that take a JSON config (Claude Desktop, Claude Code, and others):
+
+```json
+{
+  "mcpServers": {
+    "peernotes": {
+      "url": "https://api.peernotes.io/mcp"
+    }
+  }
+}
+```
+
+In **Claude Desktop**, that's **Settings › Developer › Edit config**, then restart Claude. In **Claude Code**, run `claude mcp add --transport http peernotes https://api.peernotes.io/mcp`. Full instructions live at [get.peernotes.io/download](https://get.peernotes.io/download).
+
+## Works with
+
+- **Claude** — web, desktop, and mobile
+- **Claude Cowork** and **Claude Code**
+- **OpenAI Codex**, **GitHub Copilot**, **Cursor**, and any other client that supports remote MCP servers
+
+MCP is an open standard, so the list keeps growing on its own.
+
+## What your agent can see
+
+Your agent only ever reaches the **workspaces your PeerNotes account can already open** — nothing else, and nothing that isn't shared with you. Access follows your account: leave a workspace and the connection to it goes with you.
+
+## Related
+
+- [Chat](/features/chat) — the Peer Agent, inside PeerNotes itself
+- [Peer Agent](/core-concepts/peer-agent) — how PeerNotes' own AI is grounded
+- [Install PeerNotes](/getting-started/install-extension) — browser, mobile, and this connector at a glance
