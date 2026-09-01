@@ -1,47 +1,73 @@
 ---
-title: "Install the PeerNotes browser extension for your team"
-sidebarTitle: "Install Extension"
-description: "Download and install the pre-release PeerNotes browser extension for Chrome, Edge, Brave, Arc, and Opera to clip pages and capture thoughts as you read."
+title: "Install PeerNotes: browser clipper, mobile apps, and AI assistant"
+sidebarTitle: "Install PeerNotes"
+description: "PeerNotes runs in any browser with nothing to install. Add the Chrome clipper, request the iPhone or Android beta, or connect PeerNotes to your AI assistant."
 ---
 
-The PeerNotes browser extension puts your workspace one click away from any webpage. Because PeerNotes is in early access, the extension is distributed as a pre-release build — meaning you'll install it manually rather than from a browser store. The process takes under five minutes and works across all Chromium-based browsers.
+The PeerNotes workspace runs in any browser — there's **nothing to install** to get started. Everything below is an optional add-on that brings capture closer to wherever your thinking happens.
 
-<Note>
-  The installation steps below apply to the **pre-release build**. Once PeerNotes launches on the Chrome Web Store, you'll be able to install the extension with a single click and skip the manual steps entirely. Existing users will be prompted to switch to the store version at that time.
-</Note>
+<Info>
+  [**get.peernotes.io/download**](https://get.peernotes.io/download) is the always-current list of everywhere PeerNotes runs. This page is a short summary.
+</Info>
 
-## What the extension lets you do
+## In your browser
 
-<Card title="Your workspace, always one click away" icon="puzzle-piece" href="/guides/web-clipper">
-  - **Clip any page** — save the full page, a selection, or just the URL directly into your workspace
-  - **Dictate a note** — start a voice note from any tab and have it transcribed into your workspace instantly
-  - **Open your workspace** — jump to PeerNotes without navigating to a new tab
-</Card>
+Open [peernotes.io](https://peernotes.io) and you're in — the whole workspace, no download.
 
-## Install the extension
+Add the **clipper** and the page you're reading becomes a [source](/core-concepts/sources), highlights included:
 
-Choose your browser below for step-by-step instructions on loading the pre-release build.
-
-<CardGroup cols={3}>
-  <Card title="Chrome" icon="chrome" href="/extension/install-chrome">
-    Install on Google Chrome using Developer mode and the unpacked extension loader.
+<CardGroup cols={2}>
+  <Card title="Chrome, Edge, Brave, Arc & Opera" icon="chrome" href="https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi">
+    Install the PeerNotes clipper from the Chrome Web Store — one click, with automatic updates. Works in every Chromium-based browser.
   </Card>
-  <Card title="Edge" icon="edge" href="/extension/install-edge">
-    Install on Microsoft Edge — the process mirrors Chrome with one extra confirmation step.
-  </Card>
-  <Card title="Brave, Arc & Opera" icon="browsers" href="/extension/install-other-browsers">
-    Install on Brave, Arc, or Opera. All three support unpacked extensions via their developer settings.
+  <Card title="Firefox & Safari" icon="firefox">
+    The clipper is coming to Firefox and Safari. Until then, use a Chromium-based browser or clip from your phone.
   </Card>
 </CardGroup>
 
-## After installation
+After installing, pin the clipper to your toolbar and click it to sign in to your workspace. See [Using the web clipper](/guides/web-clipper) for the full workflow.
 
-Once the extension is installed and pinned to your browser toolbar, click the PeerNotes icon to sign in with your account. After you authenticate, the extension is linked to your workspace and ready to use on any page.
+## On your phone
 
-<Tip>
-  Pin the extension to your toolbar for the fastest access. In Chrome and Edge, click the puzzle-piece icon in the top-right corner of your browser and select the pin icon next to PeerNotes.
-</Tip>
+The PeerNotes iPhone and Android apps are in **private beta**. Tell the team a little about your workspace and they'll send you a build:
 
-<Warning>
-  If your browser shows an "Extensions are disabled" banner after restarting, you may need to re-enable Developer mode in your browser settings. This is a browser-level restriction on unpacked extensions — it will no longer apply once PeerNotes is available on the Chrome Web Store.
-</Warning>
+<CardGroup cols={2}>
+  <Card title="iPhone beta" icon="apple" href="mailto:support@peernotes.io?subject=Request%20to%20join%20iPhone%20beta%20testing">
+    Request an invite for iPhone.
+  </Card>
+  <Card title="Android beta" icon="android" href="mailto:support@peernotes.io?subject=Request%20to%20join%20Android%20beta%20testing">
+    Request an Android build.
+  </Card>
+</CardGroup>
+
+You can also share a link or screenshot into PeerNotes from any app's share sheet, or dictate a thought on your way out of a meeting — it lands in the same workspace your teammates pick up from the browser.
+
+## In your AI assistant
+
+Connect PeerNotes to an assistant that supports remote [MCP](https://modelcontextprotocol.io) — Claude, and a growing list of others — and it answers from your workspace's notes, sources, and topics instead of the open web.
+
+<Steps>
+  <Step title="Copy your workspace address">
+    `https://api.peernotes.io/mcp`
+  </Step>
+  <Step title="Add it as a connector">
+    Paste the address where your assistant asks for a remote MCP server or connector.
+  </Step>
+  <Step title="Sign in with PeerNotes">
+    Authenticate with your PeerNotes account — no API keys to manage. Your assistant only ever sees the workspaces your account can already open.
+  </Step>
+</Steps>
+
+For Claude Desktop or Claude Code, add the server to your config file instead:
+
+```json
+{
+  "mcpServers": {
+    "peernotes": {
+      "url": "https://api.peernotes.io/mcp"
+    }
+  }
+}
+```
+
+In Claude Desktop, that's **Settings › Developer › Edit config**, then restart Claude. Full instructions live at [get.peernotes.io/download](https://get.peernotes.io/download).

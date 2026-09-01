@@ -1,33 +1,30 @@
 ---
 title: "Troubleshooting guide for common PeerNotes problems"
 sidebarTitle: "Troubleshooting"
-description: "Fix common issues with PeerNotes, including browser extension installation problems, web clipper errors, login issues, and syncing problems."
+description: "Fix common issues with PeerNotes, including browser clipper problems, web clipper errors, login issues, and syncing problems."
 ---
 
 Most issues with PeerNotes can be resolved in just a few steps. Work through the relevant section below, and if you're still stuck, the [contact page](/help/contact) has details on how to reach the team.
 
-## Extension won't install
+## Clipper won't install
 
-Because the PeerNotes extension is a pre-release build installed manually, a few things can go wrong during setup.
+The PeerNotes clipper installs from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) in one click. If it won't add:
 
 <Steps>
-  <Step title="Enable Developer mode">
-    Open your browser's extension manager (usually at `chrome://extensions` or equivalent). Toggle **Developer mode** on — it's typically in the top-right corner of the page. Without this, the browser won't allow unpacked extensions to be loaded.
+  <Step title="Use a Chromium-based browser">
+    The clipper works in Chrome, Edge, Brave, Arc, and Opera. Firefox and Safari aren't supported yet — until then, use a Chromium-based browser or clip from the mobile apps.
   </Step>
-  <Step title="Extract the ZIP file fully">
-    Make sure you have fully extracted the downloaded ZIP archive before loading it. Trying to load the ZIP file itself, or a partially extracted folder, is a common cause of installation failure. Extract it to a permanent location you won't accidentally delete.
+  <Step title="Allow extensions from the Chrome Web Store">
+    On a managed or work device, your organisation may block Web Store installs. Check with your IT admin, or install on a personal profile.
   </Step>
-  <Step title="Select the correct folder">
-    When you click **Load unpacked**, select the extracted folder — the one that contains the `manifest.json` file. Don't select a parent folder or the ZIP file itself.
-  </Step>
-  <Step title="Remove and re-add the extension">
-    If the extension still won't load, remove any existing failed entry from the extension manager, then try loading the unpacked folder again from scratch.
+  <Step title="Reload after installing">
+    Refresh any tabs that were already open before you added the clipper so it can activate on them.
   </Step>
 </Steps>
 
-<Warning>
-  Don't move or delete the extracted extension folder after installation. Your browser loads the extension directly from that folder, so removing it will break the extension.
-</Warning>
+<Note>
+  Still running an early manual build? Remove it from your browser's extensions page and reinstall from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) to get automatic updates.
+</Note>
 
 ---
 
@@ -72,8 +69,8 @@ If clicking the PeerNotes extension icon does nothing, or the clipper fails to s
 If you're unable to sign in to your PeerNotes account, work through these checks.
 
 <Steps>
-  <Step title="Check your email for an invitation">
-    PeerNotes is in early access. You need an invitation email before you can create an account. If you haven't received one yet, make sure you've signed up on the [early access waitlist](https://forms.gle/aNnZjd8pVNitfwse7).
+  <Step title="Create your account at peernotes.io">
+    PeerNotes is in research preview, open to teams. If you don't have an account yet, go to [peernotes.io](https://peernotes.io) and choose **Get started**.
   </Step>
   <Step title="Confirm you're using the right login page">
     Always log in at [peernotes.io](https://peernotes.io). Bookmarking the correct URL avoids accidentally landing on a phishing page or an old cached version.
@@ -82,7 +79,7 @@ If you're unable to sign in to your PeerNotes account, work through these checks
     If you've forgotten your password, use the **Forgot password** link on the login page. Check your spam or junk folder if the reset email doesn't arrive within a few minutes.
   </Step>
   <Step title="Check for a typo in your email address">
-    Ensure you're entering the exact email address you used when accepting your invitation.
+    Ensure you're entering the exact email address you signed up with.
   </Step>
 </Steps>
 
@@ -113,25 +110,18 @@ If changes you make in PeerNotes aren't appearing on other devices or for your c
 
 ---
 
-## Extension needs updating
+## Clipper is out of date
 
-The PeerNotes browser extension doesn't update automatically because it's installed as an unpacked extension. When a new version is released, follow these steps to update.
+The Chrome Web Store version of the clipper updates itself in the background — you don't need to do anything.
 
 <Steps>
-  <Step title="Download the latest ZIP">
-    Download the newest version of the extension ZIP from the link provided in your invitation email or from the [Discord community](https://discord.gg/muDmrV2jq7).
+  <Step title="Force an update check">
+    Open your browser's extensions page, enable **Developer mode**, and click **Update**. Chromium browsers otherwise refresh extensions every few hours.
   </Step>
-  <Step title="Extract the new ZIP">
-    Extract the contents to a folder on your computer. You can overwrite your existing extracted folder, or extract to a new location.
-  </Step>
-  <Step title="Reload the extension in your browser">
-    Open your browser's extension manager, find PeerNotes, and click the reload icon (↺) if you replaced the files in the same folder. If you extracted to a new location, click **Load unpacked** and select the new folder — then remove the old entry.
+  <Step title="Switch off any early manual build">
+    If you loaded an unpacked pre-release build in the past, remove it from the extensions page and install the clipper from the [Chrome Web Store](https://chromewebstore.google.com/detail/ojongipbblbjdoidjgmefhdhngmimhbi) so updates arrive automatically from now on.
   </Step>
 </Steps>
-
-<Tip>
-  Keep your extension ZIP in a dedicated folder so you always know where to find it when an update is available.
-</Tip>
 
 ---
 

@@ -44,14 +44,6 @@
         ]
       },
       {
-        "group": "Extension Setup",
-        "pages": [
-          "extension/install-chrome",
-          "extension/install-edge",
-          "extension/install-other-browsers"
-        ]
-      },
-      {
         "group": "Help",
         "pages": [
           "help/faq",
@@ -65,6 +57,22 @@
     "family": "Inter"
   },
   "redirects": [
+    {
+      "source": "/core-concepts/articles",
+      "destination": "/core-concepts/notes"
+    },
+    {
+      "source": "/extension/install-chrome",
+      "destination": "/getting-started/install-extension"
+    },
+    {
+      "source": "/extension/install-edge",
+      "destination": "/getting-started/install-extension"
+    },
+    {
+      "source": "/extension/install-other-browsers",
+      "destination": "/getting-started/install-extension"
+    },
     {
       "source": "/guides/dictate-a-note",
       "destination": "/core-concepts/thoughts"
