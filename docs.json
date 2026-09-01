@@ -13,7 +13,7 @@
       {
         "group": "Get Started",
         "pages": [
-          "introduction",
+          "index",
           "getting-started/account-setup",
           "getting-started/install-extension"
         ]
@@ -30,35 +30,35 @@
         ]
       },
       {
-        "group": "Using PeerNotes",
+        "group": "Guides",
         "pages": [
-          "guides/web-clipper",
+          "guides/first-note",
           "guides/writing-notes",
-          "guides/voice-and-ai",
-          "guides/ai-assistant"
+          "guides/team"
         ]
       },
       {
-        "group": "Collaboration",
+        "group": "Features",
         "pages": [
-          "collaboration/shared-workspace",
-          "collaboration/real-time-editing",
-          "collaboration/sharing-notes"
+          "features/web-clipper",
+          "features/dictation",
+          "features/listen",
+          "features/ai-editor",
+          "features/chat",
+          "features/search",
+          "features/comments",
+          "features/sharing",
+          "features/collaborators",
+          "features/workspace-settings",
+          "features/preferences"
         ]
       },
       {
-        "group": "Configuration",
+        "group": "Troubleshooting",
         "pages": [
-          "configuration/workspace-settings",
-          "configuration/user-preferences"
-        ]
-      },
-      {
-        "group": "Help",
-        "pages": [
-          "help/faq",
-          "help/troubleshooting",
-          "help/contact"
+          "troubleshooting/common-issues",
+          "troubleshooting/faq",
+          "troubleshooting/contact"
         ]
       }
     ]
@@ -67,6 +67,10 @@
     "family": "Inter"
   },
   "redirects": [
+    {
+      "source": "/introduction",
+      "destination": "/"
+    },
     {
       "source": "/core-concepts/articles",
       "destination": "/core-concepts/notes"
@@ -85,11 +89,55 @@
     },
     {
       "source": "/guides/dictate-a-note",
-      "destination": "/guides/voice-and-ai"
+      "destination": "/features/dictation"
     },
     {
       "source": "/guides/listen-to-workspace",
-      "destination": "/guides/voice-and-ai"
+      "destination": "/features/listen"
+    },
+    {
+      "source": "/guides/voice-and-ai",
+      "destination": "/features/ai-editor"
+    },
+    {
+      "source": "/guides/web-clipper",
+      "destination": "/features/web-clipper"
+    },
+    {
+      "source": "/guides/ai-assistant",
+      "destination": "/features/chat"
+    },
+    {
+      "source": "/collaboration/shared-workspace",
+      "destination": "/guides/team"
+    },
+    {
+      "source": "/collaboration/real-time-editing",
+      "destination": "/features/collaborators"
+    },
+    {
+      "source": "/collaboration/sharing-notes",
+      "destination": "/features/sharing"
+    },
+    {
+      "source": "/configuration/workspace-settings",
+      "destination": "/features/workspace-settings"
+    },
+    {
+      "source": "/configuration/user-preferences",
+      "destination": "/features/preferences"
+    },
+    {
+      "source": "/help/troubleshooting",
+      "destination": "/troubleshooting/common-issues"
+    },
+    {
+      "source": "/help/faq",
+      "destination": "/troubleshooting/faq"
+    },
+    {
+      "source": "/help/contact",
+      "destination": "/troubleshooting/contact"
     }
   ],
   "navbar": {
@@ -103,5 +151,5 @@
       "enabled": true
     }
   },
-  "description": "PeerNotes is a collaborative workspace for small teams where you sharpen your thinking."
+  "description": "PeerNotes is the intelligent workspace where a team's reading becomes thoughts, thoughts become notes, and notes become shared knowledge."
 }
