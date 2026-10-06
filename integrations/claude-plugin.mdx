@@ -1,0 +1,119 @@
+---
+title: "Claude plugin: use PeerNotes from Claude"
+sidebarTitle: "Claude plugin"
+description: "Install the PeerNotes plugin for Claude Code and Claude Cowork. Ask Claude about your workspace, and schedule syncs that import meeting notes, GitHub summaries, and documents."
+icon: "puzzle-piece"
+---
+
+The PeerNotes plugin connects Claude to your [workspace](/core-concepts/workspace). It works in **Claude Code** and **Claude Cowork**. The plugin does two jobs:
+
+- **Ask Claude about your workspace.** Anyone on the team can search, read, and ask questions about PeerNotes content. Claude can also create, edit, and comment on it for you.
+- **Keep the team workspace filled.** One person on the team, the **sync admin**, sets up [scheduled syncs](/integrations/scheduled-syncs). The syncs import meeting transcripts, daily GitHub code summaries, and documents from your other tools into PeerNotes.
+
+> *"What did we decide about pricing? Check PeerNotes."*
+> — *Read 6 notes and 3 meeting transcripts from your workspace. You agreed on two tiers…*
+
+The plugin is open source at [github.com/Obtainable-ai/agent-plugins](https://github.com/Obtainable-ai/agent-plugins).
+
+## Install the plugin
+
+<Tabs>
+  <Tab title="Claude Code">
+    <Steps>
+      <Step title="Add the Obtainable marketplace">
+        You only need to do this once.
+
+        ```bash
+        claude plugin marketplace add obtainable-ai/agent-plugins
+        ```
+      </Step>
+      <Step title="Install the plugin">
+        ```bash
+        claude plugin install peernotes@obtainable
+        ```
+      </Step>
+      <Step title="Sign in to PeerNotes">
+        Run `/mcp` in Claude Code, choose **Peernotes**, and sign in with your PeerNotes account. There are no API keys or config files to edit.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Claude Cowork">
+    <Steps>
+      <Step title="Add the plugin">
+        Add the `obtainable-ai/agent-plugins` marketplace in Cowork, then install the **peernotes** plugin.
+      </Step>
+      <Step title="Sign in to PeerNotes">
+        Open **Settings → Connectors → Peernotes plugin** and sign in to **Peernotes** with your PeerNotes account.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+The plugin offers several connectors. Only **Peernotes** is required. Sign in to the others only if your team's syncs use them. See [Connectors](#connectors).
+
+### Roll out to your whole company
+
+An admin can turn the plugin on for everyone through Claude Code managed settings. Open **claude.ai admin → Claude Code → Managed settings**, or use your MDM, and add:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "obtainable": {
+      "source": { "source": "github", "repo": "obtainable-ai/agent-plugins" }
+    }
+  },
+  "enabledPlugins": {
+    "peernotes@obtainable": true
+  }
+}
+```
+
+## Ask Claude about your workspace
+
+The `peernotes` skill lets Claude work with your PeerNotes content. Ask in plain language:
+
+- *"Search PeerNotes for what we know about onboarding drop-off."*
+- *"Show my latest notes."*
+- *"Save this as a thought in PeerNotes."*
+- *"Comment on the pricing note with these three questions."*
+
+Claude only reaches the **workspaces your PeerNotes account can already open**. Access follows your account. If you leave a workspace, Claude loses access to it too.
+
+## Import data with scheduled syncs
+
+The plugin can also schedule syncs that import content from your team's other tools into PeerNotes. One person, the **sync admin**, sets them up by asking Claude: *"Set up PeerNotes for my team."*
+
+| Sync | What it imports | Default schedule |
+| --- | --- | --- |
+| **Meeting notes** | A transcript of every team meeting, from notetakers, Zoom, Teams, Slack huddles, shared folders, and email | Weekdays, about 6 pm |
+| **GitHub summaries** | A daily digest per repository, plus a team engineering digest | Daily, about 8 am |
+| **Document sync** | New and changed documents from Google Drive, SharePoint, OneDrive, and Notion | Daily, about 1 am |
+
+Each imported item becomes a [source](/core-concepts/sources) in your workspace. Syncs only read from your tools, skip private and sensitive content by default, and never create duplicates.
+
+See [Scheduled syncs](/integrations/scheduled-syncs) for setup, one-time backfills, managing schedules, and what syncs skip.
+
+## Connectors
+
+**Peernotes** is the only required connector. The others are needed only for the [scheduled syncs](/integrations/scheduled-syncs) your team uses.
+
+| Connector | Used by |
+| --- | --- |
+| **Peernotes** | Everything (required) |
+| **Slack** | Meeting notes: huddle canvases and recaps |
+| **Gmail**, **Google Calendar** | Meeting notes: recap emails, meeting lookup |
+| **Google Drive** | Meeting notes (transcript folders) and document sync |
+| **GitHub** | GitHub summaries. Grant it access to the org's private repos in GitHub. |
+| **Microsoft 365** | Meeting notes (Outlook, Teams) and document sync (OneDrive, SharePoint). Needs one-time admin consent in Microsoft Entra. |
+| **Notion** | Document sync |
+| **Zoom**, **Fireflies**, **Otter**, **Fathom**, **Gong**, **Read.ai**, **Granola**, **Dropbox** | Meeting notes. Gong needs a paid seat, enabled by an admin. |
+
+In Cowork, Slack, Gmail, Google Calendar, Google Drive, and GitHub are standard connectors. Connect them once in **Settings → Connectors**, and the plugin uses them. The rest come with the plugin. Claude.ai connectors don't carry over to Claude Code, so in Claude Code you sign in to each one with `/mcp`.
+
+## Related
+
+- [Scheduled syncs](/integrations/scheduled-syncs): import meetings, code, and documents on a schedule
+- [Slack integration](/integrations/slack): ask PeerNotes directly from Slack
+- [Other AI agents (MCP)](/integrations/mcp): connect Codex, Copilot, Cursor, and other agents
+- [Peer Agent](/core-concepts/peer-agent): PeerNotes' own AI, inside the workspace
+- [Sources](/core-concepts/sources): what synced meetings, digests, and documents become

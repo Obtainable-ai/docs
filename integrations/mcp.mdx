@@ -1,14 +1,18 @@
 ---
-title: "Use PeerNotes with your AI agent"
-sidebarTitle: "Connect Your Agent"
+title: "Connect other AI agents to PeerNotes over MCP"
+sidebarTitle: "Other AI agents (MCP)"
 icon: "plug"
-description: "Connect PeerNotes to the AI agent you already use — Claude, Claude Cowork, Claude Code, Codex, Copilot — so it answers from your workspace instead of the open web."
+description: "Connect PeerNotes to Codex, GitHub Copilot, Cursor, or any agent that supports remote MCP, so it answers from your workspace instead of the open web."
 ---
 
 PeerNotes exposes your [workspace](/core-concepts/workspace) as a remote [MCP](https://modelcontextprotocol.io) server. Point the AI agent you already use at it and, instead of guessing from the open web, it answers from what you and your teammates actually wrote — your notes, sources, and topics.
 
 > *"What did the team learn about screening signal this quarter?"*
 > — *Read 9 notes and 4 sources from your workspace. The recurring theme is a synthesis gap, not a capture problem…*
+
+<Tip>
+  **Using Claude Code or Claude Cowork?** Install the [Claude plugin](/integrations/claude-plugin) instead. It connects to the same MCP server, and adds skills and [scheduled syncs](/integrations/scheduled-syncs) for meetings, code, and documents. Use the steps on this page for other agents.
+</Tip>
 
 ## Connect it
 
@@ -26,7 +30,7 @@ PeerNotes exposes your [workspace](/core-concepts/workspace) as a remote [MCP](h
 
 ### Or edit a config file
 
-For clients that take a JSON config (Claude Desktop, Claude Code, and others):
+For clients that take a JSON config, add:
 
 ```json
 {
@@ -38,13 +42,19 @@ For clients that take a JSON config (Claude Desktop, Claude Code, and others):
 }
 ```
 
-In **Claude Desktop**, that's **Settings › Developer › Edit config**, then restart Claude. In **Claude Code**, run `claude mcp add --transport http peernotes https://api.peernotes.io/mcp`. Full instructions live at [get.peernotes.io/download](https://get.peernotes.io/download).
+The same server works in Claude without the plugin. In **Claude Desktop**, open **Settings › Developer › Edit config**, then restart Claude. In **Claude Code**, run:
+
+```bash
+claude mcp add --transport http peernotes https://api.peernotes.io/mcp
+```
+
+Full instructions live at [get.peernotes.io/download](https://get.peernotes.io/download).
 
 ## Works with
 
-- **Claude** — web, desktop, and mobile
-- **Claude Cowork** and **Claude Code**
-- **OpenAI Codex**, **GitHub Copilot**, **Cursor**, and any other client that supports remote MCP servers
+- **OpenAI Codex**, **GitHub Copilot**, and **Cursor**
+- **Claude** on web, desktop, and mobile, as a custom connector
+- Any other client that supports remote MCP servers
 
 MCP is an open standard, so the list keeps growing on its own.
 
@@ -54,6 +64,6 @@ Your agent only ever reaches the **workspaces your PeerNotes account can already
 
 ## Related
 
-- [Chat](/features/chat) — the Peer Agent, inside PeerNotes itself
-- [Peer Agent](/core-concepts/peer-agent) — how PeerNotes' own AI is grounded
-- [Install PeerNotes](/getting-started/install-extension) — browser, mobile, and this connector at a glance
+- [Claude plugin](/integrations/claude-plugin): the recommended way to use PeerNotes from Claude Code and Cowork
+- [Chat](/features/chat): the Peer Agent, inside PeerNotes itself
+- [Peer Agent](/core-concepts/peer-agent): how PeerNotes' own AI is grounded

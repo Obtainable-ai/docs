@@ -1,0 +1,234 @@
+---
+title: "Scheduled syncs: import meetings, code, and documents into PeerNotes"
+sidebarTitle: "Scheduled syncs"
+description: "Use the PeerNotes Claude plugin to schedule syncs that bring meeting transcripts, daily GitHub summaries, and shared documents into your team workspace."
+icon: "arrows-rotate"
+---
+
+The [Claude plugin](/integrations/claude-plugin) can keep your team workspace filled with what already happens in your other tools. It sets up **scheduled syncs** that run in Claude and import three kinds of content into PeerNotes:
+
+- **Meeting notes:** a transcript of every team meeting.
+- **GitHub summaries:** a daily digest of what changed in each repository.
+- **Document sync:** new and changed documents from shared drives and Notion.
+
+Everything a sync imports becomes a [source](/core-concepts/sources) in your workspace. Your team can then capture thoughts on it, write notes from it, and ask the [Peer Agent](/core-concepts/peer-agent) about it.
+
+## How it works for a team
+
+Syncs are set up by one person on behalf of the team: the **sync admin**.
+
+<Steps>
+  <Step title="The sync admin installs the plugin">
+    Install the [Claude plugin](/integrations/claude-plugin#install-the-plugin) and sign in to PeerNotes.
+  </Step>
+  <Step title="The sync admin connects the team's tools">
+    Connect each tool with your own access. Prefer team-wide access over your personal account. See [Choose team-wide sources](#choose-team-wide-sources).
+  </Step>
+  <Step title="The sync admin asks Claude to set it up">
+    Say *"Set up PeerNotes for my team."* Claude walks you through the choices and creates the schedules. See [Set up syncs](#set-up-syncs).
+  </Step>
+  <Step title="Everyone else just uses PeerNotes">
+    Synced sources show up in the workspace. Teammates don't need to install anything.
+  </Step>
+</Steps>
+
+<Info>
+  Syncs run as **scheduled tasks** in Claude Cowork or the Claude desktop app's **Code** tab. They run in the cloud, so your computer doesn't need to be on.
+</Info>
+
+## The three syncs
+
+Each sync is optional. Meeting notes is included in every setup unless you turn it off.
+
+| Sync | What it brings in | Default schedule | Each run covers |
+| --- | --- | --- | --- |
+| **Meeting notes** | One source per team meeting, with the full transcript | Weekdays, about 6 pm | The last 2 days (3 on Mondays) |
+| **GitHub summaries** | One digest source per active repository, plus a team engineering digest | Daily, about 8 am | The previous calendar day |
+| **Document sync** | One source per new or changed document | Daily, about 1 am | Documents changed in the last 2 days |
+
+Schedules use your time zone. Runs start a few minutes before the hour, for example at 5:52 pm. Each run looks back a little further than its interval, so a missed or slow run doesn't leave a gap. Overlapping runs never create duplicates. See [No duplicates](#no-duplicates).
+
+### Meeting notes
+
+Collects meeting transcripts from your team's tools. It saves each meeting as one Markdown source named `<Meeting title>, <date>`.
+
+Each source starts with the date, attendees, and a link back to the original. The transcript follows, with speaker labels kept. Transcripts are saved as they are, never summarized.
+
+It can read from:
+
+| Kind of tool | Examples |
+| --- | --- |
+| AI notetakers | Fireflies, Otter, Fathom, Gong, Read.ai, Granola |
+| Meeting platforms | Zoom, Microsoft Teams, Slack huddles |
+| Cloud storage | Google Drive, OneDrive, SharePoint, Dropbox |
+| Email | Gmail, Outlook (recap emails) |
+| Calendar | Google Calendar, Outlook Calendar (used to get accurate titles, times, and attendees) |
+
+If the same meeting shows up in more than one tool, it's saved once. The sync keeps the most complete transcript and adds links to the others. For a Slack huddle with no transcript, it saves the huddle's AI-generated notes, clearly labeled as such.
+
+### GitHub summaries
+
+Writes a daily digest for each repository in your GitHub org that had activity the day before. It covers up to 25 repositories per run. Each digest is a source named `<repo>: <start> – <end>` and includes:
+
+- **What shipped:** grouped by area (web app, mobile, API, infrastructure, docs). It's based on the actual code changes, not just PR titles.
+- **What went away:** removed features, endpoints, or config.
+- **Worth knowing:** breaking changes, migrations, config changes, and CI status.
+- **In flight:** open pull requests and how long they've been open.
+- **Reading the mood:** a short paragraph on what kind of day it was and who contributed.
+
+The **team engineering digest** adds one more source, `Engineering digest: <start> – <end>`, that covers the whole org. It's on by default.
+
+Digests never include raw diffs or code beyond short names, like function, file, and endpoint names. If a change looks like it committed a secret, the digest flags the file without repeating the value.
+
+### Document sync
+
+Imports documents from shared drives and Notion, then keeps them current:
+
+- **Google Drive:** shared drives or specific shared folders.
+- **SharePoint and OneDrive:** team sites and document libraries.
+- **Notion:** teamspaces or specific parent pages.
+
+Text documents (Google Docs, Word, Notion pages, Markdown, plain text) become Markdown sources with the content reproduced in full. Other files, like PDFs, slides, spreadsheets, and images, are uploaded as the original file.
+
+When a document changes, the sync **updates its existing source** instead of adding a new one. A scheduled run handles up to 50 documents. Anything left over waits for the next run. Files over 20 MB are skipped.
+
+<Tip>
+  For a first import of existing documents, run a [one-time sync](#run-a-sync-once-or-backfill). It handles up to 200 documents per run, and Claude offers another run if more remain.
+</Tip>
+
+## Set up syncs
+
+Ask Claude *"Set up PeerNotes for my team."* Claude asks a few questions, then creates everything.
+
+<Steps>
+  <Step title="Pick the workspace and visibility">
+    Choose the team workspace. Then choose whether synced sources are **shared with the workspace** (recommended) or **private to you** for a trial run.
+  </Step>
+  <Step title="Pick the syncs and timing">
+    Choose which syncs to turn on, and whether to run them now, once at a set time, or on a recurring schedule. You can keep the default schedules or set your own.
+  </Step>
+  <Step title="Choose sources and exclusions">
+    For each sync, name the team sources to use: which notetaker, Slack channels, GitHub org or repositories, shared drives, and Notion teamspaces. Review the [exclusions](#what-syncs-skip) and add any of your own.
+  </Step>
+  <Step title="Connect anything that's missing">
+    Claude checks that each source is connected and working. If one isn't, it shows you how to connect it, then lets you choose **Connected — check again**, **Schedule anyway**, or **Skip this sync**.
+  </Step>
+  <Step title="Confirm">
+    Claude shows what will be visible to the whole workspace and asks you to confirm. It then creates a scheduled task for each sync and summarizes them, for example *"weekdays at 5:52 pm Pacific"*.
+  </Step>
+</Steps>
+
+<Warning>
+  If you choose **Schedule anyway** for a source that isn't connected, every run of that sync fails until you connect it.
+</Warning>
+
+### The team sync settings note
+
+Setup publishes a note called **PeerNotes team sync settings** in the workspace, shared with everyone. It lists:
+
+- The sync admin and when settings last changed.
+- Each sync's schedule and sources.
+- What's excluded.
+
+Teammates can comment on this note to ask for changes. Claude updates it whenever you change the syncs, and reads it to reuse your settings the next time you run setup.
+
+## Run a sync once or backfill
+
+You don't have to schedule anything. You can ask Claude to run a sync right now, or once at a set time. A one-time run covers an exact date range instead of the rolling window. For example:
+
+- *"Backfill the last 90 days of team meetings into PeerNotes tonight."*
+- *"Import all existing documents from our Product shared drive into PeerNotes."*
+- *"Summarize last week's code changes in our GitHub org into PeerNotes."*
+
+For long ranges, syncs work through the backlog in order, oldest first. For example, a GitHub backfill longer than 14 days writes one digest per repository per week.
+
+## Manage syncs
+
+Ask Claude in plain language. To change anything, you must be the sync admin who created the syncs.
+
+| To | Ask |
+| --- | --- |
+| See your syncs | *"Show our PeerNotes schedules."* |
+| Change sources or exclusions | *"Add #design-reviews to our PeerNotes meeting sync."* |
+| Change the time | *"Run the PeerNotes document sync at 3 am instead."* |
+| Pause or resume | *"Pause the GitHub summaries."* |
+| Stop a sync | *"Cancel the PeerNotes document sync."* |
+
+Each change updates the settings note too.
+
+After each run, Claude sends a short report. It lists what was created, updated, skipped, excluded, and failed. Excluded items are counted but never named.
+
+### Hand over to a new sync admin
+
+Syncs run with the sync admin's connections. If the admin leaves the team or loses access to a tool, the syncs fail. To hand over:
+
+1. The new admin installs the plugin and connects the team's tools with their own access.
+2. The new admin says *"Set up PeerNotes for my team."* Claude loads the current settings from the settings note and creates new schedules.
+3. The previous admin cancels their old syncs.
+
+If someone else already runs the syncs, Claude warns you before you set up a second copy.
+
+## Choose team-wide sources
+
+Syncs can only read what the sync admin's connections can see. Choose sources that cover the whole team:
+
+| For meetings, use | It covers |
+| --- | --- |
+| A notetaker's team workspace (Fireflies, Otter, Gong, Fathom, Read.ai) | Every meeting the notetaker joined for the team |
+| Zoom account cloud recordings (needs a Zoom admin role) | Every recorded meeting on the account |
+| Specific Slack channels | Huddle notes and recap posts in those channels |
+| A shared transcripts folder | Anything teammates or tools save there, like Google Meet recordings |
+| Your own inbox or calendar | **Only meetings you attended.** Use it as an extra source, not team coverage. |
+
+For GitHub, connect the GitHub connector and grant it access to your org's private repositories in GitHub's org settings. If a run only finds public repositories, its report tells you.
+
+For documents, pick shared drives, team sites, and Notion teamspaces. Personal drives are skipped unless you name a specific folder.
+
+## What syncs skip
+
+Synced sources are visible to the whole workspace, so syncs are careful about what they bring in.
+
+**Skipped by default:**
+
+- DMs, group DMs, and private channels
+- 1:1 meetings
+- Meetings, documents, and folders whose names include *1:1*, *confidential*, *private*, *personal*, *HR*, *interview*, *performance*, *legal*, or *compensation*
+- Personal drives, and documents shared with only a few people
+- Files that look like credentials, such as `.env` files and keys
+
+You can add or remove exclusions during setup.
+
+**What syncs never do:**
+
+- **Change your tools.** Syncs only read. They never post, reply, edit, move, label, or delete anything in Slack, GitHub, your drives, or your notetaker.
+- **Delete from PeerNotes.** If a document is deleted at its source, the run's report mentions it, but its PeerNotes source stays.
+- **Widen access.** A document restricted to a few people isn't copied into a shared workspace.
+
+### No duplicates
+
+Every synced source has a **Sync ID** on its last header line. Before writing, a sync checks for that ID. Items that already exist are skipped, or updated in place for changed documents. That's why rerunning a sync, or an overlapping backfill, never creates copies.
+
+Every synced source also says *"Synced for the team by \<admin name\>"*, so everyone can see where it came from.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="A scheduled run failed with a missing connector">
+    Scheduled runs never stop to ask questions. If a connector isn't signed in, the run reports which one and stops. Sign in to it from **Settings → Connectors**, then ask Claude to run the sync now to catch up.
+  </Accordion>
+  <Accordion title="GitHub summaries only cover public repositories">
+    The GitHub connector can't see your org's private repositories. Grant it access in your GitHub org settings.
+  </Accordion>
+  <Accordion title="Microsoft 365 sign-in doesn't complete">
+    Microsoft 365 needs a one-time admin consent in your organization's Microsoft Entra tenant. After that, sign in from **Settings → Connectors** as usual.
+  </Accordion>
+  <Accordion title="A meeting is missing">
+    Check that it was in the sync's sources and not excluded. If you used your own inbox or calendar, only meetings you attended are covered. To pick up an older meeting, run a one-time backfill for its date.
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+- [Claude plugin](/integrations/claude-plugin): install the plugin and connect your tools
+- [Sources](/core-concepts/sources): what synced meetings, digests, and documents become
+- [Slack integration](/integrations/slack): ask PeerNotes directly from Slack
