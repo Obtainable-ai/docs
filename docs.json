@@ -59,7 +59,8 @@
         "pages": [
           "integrations/slack",
           "integrations/claude-plugin",
-          "integrations/scheduled-syncs"
+          "integrations/scheduled-syncs",
+          "integrations/mcp"
         ]
       },
       {
@@ -153,7 +154,7 @@
     },
     {
       "source": "/features/mcp",
-      "destination": "/integrations/claude-plugin"
+      "destination": "/integrations/mcp"
     }
   ],
   "navbar": {
