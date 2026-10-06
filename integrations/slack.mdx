@@ -1,0 +1,88 @@
+---
+title: "Slack integration: ask PeerNotes from Slack"
+sidebarTitle: "Slack"
+description: "Connect a PeerNotes workspace to Slack. Mention PeerNotes in a channel or message it directly, and it answers in the thread from what your team has shared."
+icon: "slack"
+---
+
+The Slack integration brings the [Peer Agent](/core-concepts/peer-agent) into Slack. Mention PeerNotes in a channel or send it a direct message, and it replies in the thread. Answers come from your team's [workspace](/core-concepts/workspace), not the open web.
+
+> *@PeerNotes what did we decide about the pricing page last month?*
+> — *You settled on two tiers. The reasoning is in the "Pricing review" note, with three customer interviews as sources…*
+
+## Connect Slack
+
+Connecting is **admin-only**. You connect one PeerNotes workspace to one Slack workspace.
+
+<Steps>
+  <Step title="Open the Integrations tab">
+    Open **Workspace settings** and select **Integrations**. Members don't see this tab.
+  </Step>
+  <Step title="Select Add to Slack">
+    PeerNotes takes you to Slack.
+  </Step>
+  <Step title="Approve the PeerNotes app">
+    Pick your Slack workspace and approve the app. Slack sends you back to PeerNotes.
+  </Step>
+  <Step title="Check the status">
+    The Slack card shows **Connected** and your Slack team ID.
+  </Step>
+</Steps>
+
+<Note>
+  Adding the app to Slack may need approval from a Slack workspace admin, depending on your Slack settings.
+</Note>
+
+## Use PeerNotes in Slack
+
+You can reach PeerNotes in two ways:
+
+- **In a channel:** type `@PeerNotes` followed by your question. First add the app to the channel. The app only sees channels it's a member of.
+- **In a direct message:** open a DM with the PeerNotes app and ask your question. No mention is needed.
+
+PeerNotes reacts with 👀 when it picks up your message. It then replies in a thread under your message.
+
+### Keep the conversation going
+
+Reply in the same thread to ask a follow-up. PeerNotes also reads the earlier messages in the thread, so it can answer a question about what your teammates just said. It reads up to 50 messages posted since its last reply.
+
+Replies are short: the answer first, then a few supporting lines. Long answers are split across more than one message.
+
+## Who can use it
+
+PeerNotes matches each Slack user to a PeerNotes account by email. To get answers, you need:
+
+- A PeerNotes account with the same email address as your Slack account.
+- Membership in the PeerNotes workspace that's connected to Slack.
+
+If either is missing, PeerNotes replies: *"Sorry, I couldn't find you on PeerNotes. Check that your Slack email matches your PeerNotes account and that you're a member of this workspace."*
+
+## What PeerNotes can see
+
+Slack threads can be read by anyone in the channel. Because of this, PeerNotes only answers from content that's **shared with the whole workspace**. It never quotes your private thoughts, notes, or sources in Slack, even when you're the one asking.
+
+See [Sharing and privacy](/features/sharing) for how to share an item with the workspace.
+
+## Manage the connection
+
+Open **Workspace settings → Integrations** to see the Slack card. It shows one of these statuses:
+
+| Status | What it means |
+| --- | --- |
+| **Connected** | Slack is working. |
+| **Needs re-auth** | Slack access expired or changed. Select **Add to Slack** to approve the app again. |
+| **Revoked** | The app was removed from Slack, or its access was revoked. Select **Add to Slack** to reconnect. |
+| **Not connected** | The workspace has never been connected. |
+
+When Slack is connected, you can also:
+
+- **Reinstall:** run the Slack approval again, for example after Slack asks for new permissions.
+- **Disconnect:** select **Disconnect**, then **Save changes**. Until you save, you can select **Undo**.
+
+If something goes wrong during setup, the card shows the error from Slack.
+
+## Related
+
+- [Peer Agent](/core-concepts/peer-agent): the AI teammate behind the Slack replies
+- [Scheduled syncs](/integrations/scheduled-syncs): import Slack huddle notes and recaps into your workspace
+- [Workspace settings](/features/workspace-settings#integrations)

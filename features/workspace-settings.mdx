@@ -1,14 +1,14 @@
 ---
 title: "Workspace settings: configure your PeerNotes workspace"
 sidebarTitle: "Workspace Settings"
-description: "Configure a PeerNotes workspace — its name and description, topics, members and roles, Peer Agent permissions, and leaving or deleting the workspace."
+description: "Configure a PeerNotes workspace — its name and description, topics, members and roles, Peer Agent permissions, integrations, and deleting your account or the workspace."
 icon: "gear"
 ---
 
 Workspace settings control everything about a [workspace](/core-concepts/workspace) itself. Open them from the workspace switcher — choose **Workspace settings**.
 
 <Info>
-  Only **admins** can change these settings. Members can open the panel but see it read-only: *"View only — you don't have permission to edit this workspace."* Leaving a workspace ([below](#leave-a-workspace)) is available to everyone.
+  Only **admins** can change these settings. Members can open the panel but see it read-only: *"View only — you don't have permission to edit this workspace."* Deleting your account ([below](#delete-your-account)) is available to everyone.
 </Info>
 
 Changes save when you select **Save changes**; the footer confirms with *"All changes saved."*
@@ -61,29 +61,41 @@ Configure the [Peer Agent](/core-concepts/peer-agent) for this workspace.
 
 The Peer Agent is enabled with all create permissions on by default. These are workspace-wide; each member additionally controls what the agent may do with *their own* content in [Preferences → AI](/features/preferences#ai).
 
+## Integrations
+
+Connect outside tools to this workspace. This tab is **admin-only**; members don't see it.
+
+| Integration | What it does |
+| --- | --- |
+| **Slack** | Lets your team mention PeerNotes in Slack and get answers from the workspace. Select **Add to Slack** to connect. See [Slack integration](/integrations/slack). |
+
+To use PeerNotes from Claude, install the [Claude plugin](/integrations/claude-plugin). It doesn't need any workspace setting.
+
 ## Danger zone
 
-The **Danger zone** tab holds two separate actions: leaving the workspace yourself, and deleting it for everyone.
+The **Danger zone** tab holds two separate actions: deleting your own account, and deleting the workspace for everyone.
 
-### Leave a workspace
+### Delete your account
 
-Any member — admin or not — can leave a workspace they belong to.
+Any member, admin or not, can delete their account from a workspace.
 
 <Steps>
-  <Step title="Open Danger zone and select Leave workspace">
-    There's no type-to-confirm step — one click leaves.
+  <Step title="Open Danger zone and select Delete account">
+    There's no type-to-confirm step.
   </Step>
   <Step title="You lose access">
-    Your membership becomes inactive and the workspace drops out of your switcher: *"You will lose access to this workspace."*
+    You lose all access to the workspace, and it drops out of your switcher. If it was your last workspace, you're signed out.
   </Step>
-  <Step title="Rejoining">
-    An admin can re-invite you later.
+  <Step title="Your content stays">
+    Your thoughts, notes, sources, and comments stay in the workspace, so your teammates keep their work. An admin can add you back later.
   </Step>
 </Steps>
 
 <Note>
-  If you're the only admin, promote another member to admin before you leave so the workspace still has someone who can manage it.
+  If you're the only admin, **Delete account** is turned off. Add another admin first, or delete the workspace instead.
 </Note>
+
+For what's deleted and what's kept, and how to ask for your personal information to be deleted entirely, see [Delete your account](/getting-started/delete-account).
 
 ### Delete a workspace
 
@@ -100,3 +112,4 @@ To delete, open **Danger zone**, type the workspace name to confirm in the field
 - [Workspaces](/core-concepts/workspace) — what the settings configure
 - [Preferences](/features/preferences) — your personal settings, across workspaces
 - [Peer Agent](/core-concepts/peer-agent)
+- [Delete your account](/getting-started/delete-account)

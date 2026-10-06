@@ -15,6 +15,7 @@
         "pages": [
           "index",
           "getting-started/account-setup",
+          "getting-started/delete-account",
           "getting-started/install-extension"
         ]
       },
@@ -45,13 +46,20 @@
           "features/listen",
           "features/ai-editor",
           "features/chat",
-          "features/mcp",
           "features/search",
           "features/comments",
           "features/sharing",
           "features/collaborators",
           "features/workspace-settings",
           "features/preferences"
+        ]
+      },
+      {
+        "group": "Integrations",
+        "pages": [
+          "integrations/slack",
+          "integrations/claude-plugin",
+          "integrations/scheduled-syncs"
         ]
       },
       {
@@ -142,6 +150,10 @@
     {
       "source": "/help/contact",
       "destination": "/troubleshooting/contact"
+    },
+    {
+      "source": "/features/mcp",
+      "destination": "/integrations/claude-plugin"
     }
   ],
   "navbar": {

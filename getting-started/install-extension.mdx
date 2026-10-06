@@ -1,8 +1,8 @@
 ---
-title: "Install PeerNotes: browser clipper, mobile apps, and AI agent connector"
+title: "Install PeerNotes: browser clipper, mobile apps, and Claude plugin"
 sidebarTitle: "Install PeerNotes"
 icon: "download"
-description: "PeerNotes runs in any browser with nothing to install. Add the Chrome clipper, request the iPhone or Android beta, or connect PeerNotes to your AI agent."
+description: "PeerNotes runs in any browser with nothing to install. Add the Chrome clipper, request the iPhone or Android beta, or install the PeerNotes plugin for Claude."
 ---
 
 The PeerNotes workspace runs in any browser — there's **nothing to install** to get started. Everything below is an optional add-on that brings capture closer to wherever your thinking happens.
@@ -43,8 +43,16 @@ The PeerNotes iPhone and Android apps are in **private beta**. Tell the team a l
 
 You can also share a link or screenshot into PeerNotes from any app's share sheet, or dictate a thought on your way out of a meeting — it lands in the same workspace your teammates pick up from the browser.
 
-## In your AI agent
+## In Claude
 
-Connect PeerNotes to the AI agent you already use — **Claude, Claude Cowork, Claude Code, OpenAI Codex, GitHub Copilot, Cursor**, or anything else that supports remote MCP — and it answers from your workspace's notes, sources, and topics instead of the open web.
+Install the PeerNotes plugin in **Claude Code** or **Claude Cowork**, and Claude answers from your workspace's notes, sources, and topics instead of the open web.
 
-Add `https://api.peernotes.io/mcp` as a remote MCP connector and sign in with your PeerNotes account. See [Use PeerNotes with your AI agent](/features/mcp) for step-by-step and config-file setup.
+```bash
+claude plugin marketplace add obtainable-ai/agent-plugins
+```
+
+```bash
+claude plugin install peernotes@obtainable
+```
+
+Then sign in with your PeerNotes account. See [Claude plugin](/integrations/claude-plugin) for Cowork setup and team syncs.
