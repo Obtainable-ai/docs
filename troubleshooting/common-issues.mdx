@@ -43,38 +43,17 @@ Most questions and issues are covered below. If you're still stuck, or you've fo
   </Accordion>
 </AccordionGroup>
 
-## Deleting your account or a workspace
+## Leaving, deleting your account, or deleting a workspace
 
-Both actions live in **Workspace settings → Danger zone**, opened from the workspace switcher. See [Workspace settings](/features/workspace-settings#danger-zone) for the full detail.
+These are three different actions:
 
-### Delete your account
+| Action | What it does | Who can do it |
+| --- | --- | --- |
+| [Leave workspace](/getting-started/leave-workspace) | Removes you from one workspace. Your account stays open. | Anyone except the workspace's only admin |
+| [Delete account](/getting-started/delete-account) | Permanently deletes your account. Workspaces where you're the only member and an admin are deleted too. | Anyone, once every shared workspace they're the only admin of has another admin or is deleted |
+| [Delete workspace](/features/workspace-settings#delete-a-workspace) | Deletes the workspace and all its content for everyone. | Admins |
 
-Any member, admin or not, can delete their account.
-
-<Steps>
-  <Step title="Open Workspace settings → Danger zone">
-    Select **Delete account**. There's no type-to-confirm step. In the mobile app, go to **You → Account → Delete account**.
-  </Step>
-  <Step title="You lose access">
-    The workspace drops out of your switcher. Your content stays in the workspace, and an admin can add you back later.
-  </Step>
-</Steps>
-
-<Note>
-  If you're the workspace's only admin, add another admin first. Otherwise no one is left who can manage it.
-</Note>
-
-To have your personal information deleted entirely, see [Delete your account](/getting-started/delete-account).
-
-### Delete a workspace
-
-Deleting is **admin-only** and permanent.
-
-<Warning>
-  Deleting removes the workspace and **all of its notes, thoughts, topics, and member associations**. This cannot be undone.
-</Warning>
-
-In **Danger zone**, type the workspace name to confirm, then select **Delete workspace** (the button stays disabled until the name matches exactly).
+On the web, Leave workspace and Delete workspace are in **Settings** and Delete account is in **Account**, both from your name at the bottom of the sidebar. In the mobile app, all three start from the **You** tab.
 
 ## Troubleshooting
 
@@ -88,7 +67,7 @@ In **Danger zone**, type the workspace name to confirm, then select **Delete wor
     Choose **Use another account** and select the Google address your admin added to the workspace. Signing in with a personal address that isn't on the team will succeed but land you with no workspace.
   </Step>
   <Step title="Ask your admin to check your membership">
-    If you were added but still can't get in, have a workspace admin confirm your Google address is on the members list in [Workspace settings → People](/features/workspace-settings#people).
+    If you were added but still can't get in, have a workspace admin confirm your Google address is on the members list in [Workspace admin → People](/features/workspace-settings#people).
   </Step>
   <Step title="Avoid in-app browsers">
     Google sign-in is blocked inside apps like Slack, LinkedIn, or Instagram. Open the link in Chrome, Edge, Brave, Arc, or Opera instead.
