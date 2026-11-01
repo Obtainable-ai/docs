@@ -1,6 +1,6 @@
 # Source: https://get.peernotes.io/download
 
-_Captured 2026-08-31. Reference material for the docs — not published._
+_Captured 2026-08-31; Android entry updated 2026-11-01 for the Google Play listing. Reference material for the docs — not published._
 
 ## Where PeerNotes lives
 
@@ -28,9 +28,9 @@ screenshot into PeerNotes from any app on your phone. Everything lands in the sa
 workspace, so your teammates pick it up from the browser.
 
 - Apple — private beta — request for iPhone: mailto:support@peernotes.io?subject=Request%20to%20join%20iPhone%20beta%20testing
-- Android — private beta — request for Android: mailto:support@peernotes.io?subject=Request%20to%20join%20Android%20beta%20testing
+- Android — Get it on Google Play: https://play.google.com/store/apps/details?id=ai.obtainable.peernotes&hl=en_US
 
-Both apps are in private beta — tell them a little about your team and they'll send you a build.
+The iPhone app is in private beta — tell them a little about your team and they'll send you a build.
 
 ### 03 In your assistant
 
