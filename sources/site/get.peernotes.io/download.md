@@ -1,6 +1,6 @@
 # Source: https://get.peernotes.io/download
 
-_Captured 2026-08-31; Android entry updated 2026-11-01 for the Google Play listing. Reference material for the docs — not published._
+_Captured 2026-08-31; Android entry updated 2026-11-01 for the Google Play listing; iPhone entry updated 2026-11-04 for the App Store listing. Reference material for the docs — not published._
 
 ## Where PeerNotes lives
 
@@ -27,10 +27,8 @@ Tap to dictate and it's in the workspace before you reach the car — or share a
 screenshot into PeerNotes from any app on your phone. Everything lands in the same
 workspace, so your teammates pick it up from the browser.
 
-- Apple — private beta — request for iPhone: mailto:support@peernotes.io?subject=Request%20to%20join%20iPhone%20beta%20testing
+- Apple — Download on the App Store: https://apps.apple.com/app/peernotes-shared-team-memory/id6791047399
 - Android — Get it on Google Play: https://play.google.com/store/apps/details?id=ai.obtainable.peernotes&hl=en_US
-
-The iPhone app is in private beta — tell them a little about your team and they'll send you a build.
 
 ### 03 In your assistant
 
